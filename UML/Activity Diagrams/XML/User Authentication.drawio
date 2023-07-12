@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" modified="2023-07-12T18:24:06.202Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.1 Safari/605.1.15" etag="6wEmq-_knMrBst-u7oL_" version="21.6.2">
+  <diagram name="Page-1" id="-kuj9KWD5zBP5fkLEx0w">
+    <mxGraphModel dx="1144" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-2" value="" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="60" relative="1" as="geometry">
+            <mxPoint x="20" y="80" as="sourcePoint" />
+            <mxPoint x="110" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-3" value="User opens the application" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="79.5" as="sourcePoint" />
+            <mxPoint x="290" y="79.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-5" value="System redirects the user to the Spotify Authorization Page" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-6" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="79.5" as="sourcePoint" />
+            <mxPoint x="480" y="79.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-7" target="uuCUpg3zVa5lidKF0Fu9-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-7" value="User logs into the Spotify profile" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-8" target="uuCUpg3zVa5lidKF0Fu9-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-8" value="User reviews the permissions" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-10" target="uuCUpg3zVa5lidKF0Fu9-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-10" value="Agree" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-14" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="660" y="198" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-15" value="System informs the user that it can&#39;t proceed" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="190" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-16" target="uuCUpg3zVa5lidKF0Fu9-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-16" value="Spotify redirects the user back to the system using the specified redirect URI&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="350" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-18" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="740" y="288" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-19" target="uuCUpg3zVa5lidKF0Fu9-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-19" value="System extracts the authorization code from the redirect URI" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-21" target="uuCUpg3zVa5lidKF0Fu9-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-21" value="System makes a POST request to the Spotify Accounts api/token endpoint with necessary information" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="630" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uuCUpg3zVa5lidKF0Fu9-23" target="uuCUpg3zVa5lidKF0Fu9-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-23" value="Spotify responds with an access token and a refresh token." style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="770" width="195" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uuCUpg3zVa5lidKF0Fu9-25" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=default;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="557.5" y="930" width="20" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
