@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" modified="2023-07-13T16:28:58.043Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.1 Safari/605.1.15" etag="GDG4iVm80rfABVBdldHh" version="21.6.2" type="device">
+  <diagram name="Page-1" id="oN25IWOcKiVILYvRX_mV">
+    <mxGraphModel dx="704" dy="855" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-2" value="" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="60" relative="1" as="geometry">
+            <mxPoint x="30" y="100" as="sourcePoint" />
+            <mxPoint x="90" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="P5bo5_zftWgw1CmG7EP9-3" target="P5bo5_zftWgw1CmG7EP9-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-3" value="User selects to update records&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="P5bo5_zftWgw1CmG7EP9-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-4" value="System fetches the user&#39;s saved tracks" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="140" as="sourcePoint" />
+            <mxPoint x="570" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-13" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;" parent="1" source="P5bo5_zftWgw1CmG7EP9-18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="575" y="70" as="sourcePoint" />
+            <mxPoint x="355" y="70" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="365" y="30" />
+              <mxPoint x="475" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-14" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="600" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="P5bo5_zftWgw1CmG7EP9-15" target="P5bo5_zftWgw1CmG7EP9-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-15" value="System retrieves the song details and insert them into a database" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="70" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="908" y="140" as="targetPoint" />
+            <mxPoint x="910" y="130" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="P5bo5_zftWgw1CmG7EP9-18" target="P5bo5_zftWgw1CmG7EP9-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-18" value="System checks if there are more tracks remaining to be fetched" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="805" y="60" width="205" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="P5bo5_zftWgw1CmG7EP9-21" target="P5bo5_zftWgw1CmG7EP9-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-21" value="System fetches the user&#39;s created playlists" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="847.5" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-23" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="900" y="168" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="P5bo5_zftWgw1CmG7EP9-24" target="P5bo5_zftWgw1CmG7EP9-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-24" value="System retrieves the playlist details and insert them into a database" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="647.5" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="P5bo5_zftWgw1CmG7EP9-26" target="P5bo5_zftWgw1CmG7EP9-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-26" value="System checks if there are more playlists remaining to be fetched" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="220" width="247.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-28" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;entryX=0.596;entryY=1.017;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="P5bo5_zftWgw1CmG7EP9-26" target="P5bo5_zftWgw1CmG7EP9-21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="847.5" y="400" as="sourcePoint" />
+            <mxPoint x="363.75" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="360" />
+              <mxPoint x="315" y="490" />
+              <mxPoint x="425" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-29" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="670" y="348" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="P5bo5_zftWgw1CmG7EP9-30" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=default;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="86.25" y="250" width="20" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
