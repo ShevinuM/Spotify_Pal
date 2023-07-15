@@ -6,7 +6,7 @@ This project is still in its initial stages. Right now I'm working on implementi
 - Spotify does not natively support all of the scripts that can be executed via its API.
 - This application allows me to create custom scripts that can be executed, making my Spotify experience more convenient.
 - To address the problem, I am developing a custom application that will provide me with the necessary functionality to perform the required tasks. The application will be specifically designed to meet my needs and ensure that I can complete these tasks efficiently and effectively.
-- More about why I'm making this can be read in the project proposal. 
+- More about why I'm making this can be read in the [project proposal('https://github.com/ShevinuM/SpotifyPal/blob/main/UML/Project%20Proposal/Project-Proposal.md). 
 
 ## How I'm making this
 - The SpotifyPal application will use Spring Boot and OAuth 2.0 for authentication, PostgreSQL for the database, and Spotify's API to interact with the user's profile. The front-end is expected to be built with HTML, CSS, JS. Using ReactJS as the front-end framework is something I’m exploring right now.
