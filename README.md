@@ -1,25 +1,42 @@
 # SpotifyPal
 
-This project is still in its initial stages. Right now I'm working on implementing the configuration for the application including configuring a database inside a docker container. I'm also working on implementing OAuth 2.0.
+Welcome to SpotifyPal - a custom application designed to enhance your Spotify experience with a suite of new functionalities.
 
-## Why I'm making this
-- Spotify does not natively support all of the scripts that can be executed via its API.
-- This application allows me to create custom scripts that can be executed, making my Spotify experience more convenient.
-- To address the problem, I am developing a custom application that will provide me with the necessary functionality to perform the required tasks. The application will be specifically designed to meet my needs and ensure that I can complete these tasks efficiently and effectively.
-- More about why I'm making this can be read in the [project proposal('https://github.com/ShevinuM/SpotifyPal/blob/main/UML/Project%20Proposal/Project-Proposal.md). 
+## Why SpotifyPal?
 
-## How I'm making this
-- The SpotifyPal application will use Spring Boot and OAuth 2.0 for authentication, PostgreSQL for the database, and Spotify's API to interact with the user's profile. The front-end is expected to be built with HTML, CSS, JS. Using ReactJS as the front-end framework is something I’m exploring right now.
+While Spotify provides a wide array of features, there are specific tasks that it doesn't natively support through its API. SpotifyPal is designed to bridge this gap by allowing you to execute custom scripts and control your music experience more conveniently and effectively. 
 
+Read more about the motivation behind SpotifyPal in the [project proposal](https://github.com/ShevinuM/SpotifyPal/blob/main/UML/Project%20Proposal/Project-Proposal.md).
 
+## How Does SpotifyPal Work?
 
-## Expected Features
-1. Sort the songs in a playlist using Audio Analysis features provided by Spotify Web API such as key & mode (Camelot wheel), tempo, and make the transitions between songs of the playlist seamless as possible.
-2. Filtre a playlist provided by the user to only include the songs saved by the user and transfer those songs to a new playlist.
-3. Compile a monthly playlist out of all the songs the user has saved/liked during the month.
-4. Filtre all the songs of a given artist to only include the songs saved by the user and create a new playlist out of those songs.
-5. Compile a yearly playlist out of all the songs the user has saved/liked during the year.
-6. User selects a 'mood' and a 'duration', and system creates a playlist based on the mood, duration and time of the day.
-7. System creates a playlist consisting of the user's top 'n' favorite/most listened to songs during the week, where 'n' is a value input by the user.
-8. System displays the user a summary of their profile stats for the month.
+SpotifyPal is built using Spring Boot and utilizes OAuth 2.0 for authentication. It uses a PostgreSQL database and the Spotify API to interact with your Spotify profile. The front-end is built using HTML, CSS, and JavaScript, and I'm currently exploring the possibility of using ReactJS as the front-end framework.
+
+## Features
+
+SpotifyPal aims to introduce the following features:
+
+1. **Playlist Sorting:** Sort the songs in your playlist using Audio Analysis features (e.g., key & mode - Camelot wheel, tempo) provided by the Spotify Web API to ensure smooth transitions between songs.
+2. **Filtered Playlists:** Filter any given playlist to only include songs you've saved and transfer them to a new playlist.
+3. **Monthly Playlists:** Compile a monthly playlist of all the songs you've saved/liked throughout the month.
+4. **Artist-specific Playlists:** Filter all songs from a given artist to only include the ones you've saved and create a new playlist out of them.
+5. **Yearly Playlists:** Compile a yearly playlist of all the songs you've saved/liked throughout the year.
+6. **Mood-based Playlists:** Create playlists based on your selected 'mood' and 'duration', adjusting for the time of day.
+7. **Top Favorites Playlist:** Generate a playlist consisting of your top 'n' favorite/most listened to songs during the week, where 'n' is a value input by you.
+8. **Profile Stats:** Display a summary of your Spotify profile stats for the month.
+
+The project is currently in its initial stages, focusing on application configuration, including setting up a PostgreSQL database inside a Docker container, and implementing OAuth 2.0 authentication.
+
+Watch this space for more updates as SpotifyPal develops!
+
+## Software Engineering Principles Used
+1. **Project Planning with UML:** Although UML is not used for many personal projects, I'm using it for mine since it has helped me a lot in the past to visualize things, avoid errors and make the codebase more organized. I'm incorporating the following UML Diagrams into my project,
+ - Use Cases & Use Case Descriptions
+ - Activity Diagrams
+ - Layer Diagrams
+ - Sequence Diagrams
+ - Class Diagrams
+2. **Iterative and Incremental Development**
+3. **Architecture Patterns:** N-Tier
+4. **Design Patterns:** MVC - Model-View-Controller
  
