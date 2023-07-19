@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5332/spotify_data
-    username: ${USERNAME}
-    password: ${PASSWORD}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   main:
     web-application-type: servlet
   jpa:
