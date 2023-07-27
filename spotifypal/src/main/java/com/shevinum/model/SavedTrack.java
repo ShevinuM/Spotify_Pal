@@ -124,10 +124,6 @@ public class SavedTrack {
 
     }
 
-    public Long getTable_id() {
-        return table_id;
-    }
-
     public String getName() {
         return name;
     }
@@ -178,10 +174,6 @@ public class SavedTrack {
 
     public Float getValence() {
         return valence;
-    }
-
-    public void setTable_id(Long index) {
-        this.table_id = index;
     }
 
     public void setName(String name) {
@@ -241,7 +233,6 @@ public class SavedTrack {
     @Override
     public String toString() {
         return "SavedTrack{" +
-                "index=" + table_id +
                 ", name='" + name + '\'' +
                 ", uri='" + uri + '\'' +
                 ", artist_name='" + artist_name + '\'' +
