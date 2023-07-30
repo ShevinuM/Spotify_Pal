@@ -1,11 +1,7 @@
 package com.shevinum.api;
 
 
-import com.shevinum.service.SpotifyPalService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+/*
 @RestController
 public class SpotifyPalController {
     private final SpotifyPalService spotifyPalService;
@@ -66,3 +62,4 @@ public class SpotifyPalController {
 
 
 }
+*/
