@@ -25,7 +25,7 @@ SpotifyPal aims to introduce the following features:
 7. **Top Favorites Playlist:** Generate a playlist consisting of your top 'n' favorite/most listened to songs during the week, where 'n' is a value input by you.
 8. **Profile Stats:** Display a summary of your Spotify profile stats for the month.
 
-The project is currently in its initial stages. Right now I'm implementing OAuth 2.0 authorization.
+The project is currently in works.
 
 Watch this space for more updates as SpotifyPal develops!
 
