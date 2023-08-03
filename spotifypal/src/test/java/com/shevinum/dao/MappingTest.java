@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * This class tests the deserialization of sample Spotify JSON responses into SpotifyTracksResponse objects.
+ */
 public class MappingTest {
 
     @Test
@@ -146,7 +149,14 @@ public class MappingTest {
 
         // when
         ObjectMapper mapper = new ObjectMapper();
-        SpotifyTracksResponse response = mapper.readValue(json, SpotifyTracksResponse.class);
+        SpotifyTracksResponse response;
+        try {
+            response = mapper.readValue(json, SpotifyTracksResponse.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        response = mapper.readValue(json, SpotifyTracksResponse.class);
+
 
         //then
         assertThat(response.href()).isEqualTo("https://api.spotify.com/v1/me/shows?offset=0&limit=20");
@@ -161,7 +171,79 @@ public class MappingTest {
             assertThat(item.track().album().total_tracks()).isEqualTo(9);
             assertThat(item.track().album().available_markets()).containsExactly("CA", "BR", "IT");
             assertThat(item.track().album().external_urls().spotify()).isEqualTo("string");
-            
+            assertThat(item.track().album().href()).isEqualTo("string");
+            assertThat(item.track().album().id()).isEqualTo("2up3OPMp9Tb4dAKM2erWXQ");
+            for (Image image : item.track().album().images()) {
+                assertThat(image.url()).isEqualTo("https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228");
+                assertThat(image.height()).isEqualTo(300);
+                assertThat(image.width()).isEqualTo(300);
+            }
+            assertThat(item.track().album().name()).isEqualTo("string");
+            assertThat(item.track().album().release_date()).isEqualTo("1981-12");
+            assertThat(item.track().album().release_date_precision()).isEqualTo("year");
+            assertThat(item.track().album().restrictions().reason()).isEqualTo("market");
+            assertThat(item.track().album().type()).isEqualTo("album");
+            assertThat(item.track().album().uri()).isEqualTo("spotify:album:2up3OPMp9Tb4dAKM2erWXQ");
+            for (Copyright copyright : item.track().album().copyrights()) {
+                assertThat(copyright.text()).isEqualTo("string");
+                assertThat(copyright.type()).isEqualTo("string");
+            }
+            assertThat(item.track().album().external_ids().isrc()).isEqualTo("string");
+            assertThat(item.track().album().external_ids().ean()).isEqualTo("string");
+            assertThat(item.track().album().external_ids().upc()).isEqualTo("string");
+            assertThat(item.track().album().genres()).containsExactly("Egg punk", "Noise rock");
+            assertThat(item.track().album().label()).isEqualTo("string");
+            assertThat(item.track().album().popularity()).isEqualTo(0);
+            assertThat(item.track().album().album_group()).isEqualTo("compilation");
+            for (SimplifiedArtist artist : item.track().album().artists()) {
+                assertThat(artist.external_urls().spotify()).isEqualTo("string");
+                assertThat(artist.href()).isEqualTo("string");
+                assertThat(artist.id()).isEqualTo("string");
+                assertThat(artist.name()).isEqualTo("string");
+                assertThat(artist.type()).isEqualTo("artist");
+                assertThat(artist.uri()).isEqualTo("string");
+            }
+            for (Artist artist : item.track().artists()) {
+                assertThat(artist.external_urls().spotify()).isEqualTo("string");
+                assertThat(artist.followers().href()).isEqualTo("string");
+                assertThat(artist.followers().total()).isEqualTo(0);
+                assertThat(artist.genres()).containsExactly("Prog rock", "Grunge");
+                assertThat(artist.href()).isEqualTo("string");
+                assertThat(artist.id()).isEqualTo("string");
+                for (Image image : artist.images()) {
+                    assertThat(image.url()).isEqualTo("https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228");
+                    assertThat(image.height()).isEqualTo(300);
+                    assertThat(image.width()).isEqualTo(300);
+                }
+                assertThat(artist.name()).isEqualTo("string");
+                assertThat(artist.popularity()).isEqualTo(0);
+                assertThat(artist.type()).isEqualTo("artist");
+                assertThat(artist.uri()).isEqualTo("string");
+            }
+            assertThat(item.track().available_markets()).containsExactly("string");
+            assertThat(item.track().disc_number()).isEqualTo(0);
+            assertThat(item.track().duration_ms()).isEqualTo(0);
+            assertThat(item.track().explicit()).isEqualTo(false);
+            assertThat(item.track().external_ids().isrc()).isEqualTo("string");
+            assertThat(item.track().external_ids().ean()).isEqualTo("string");
+            assertThat(item.track().external_ids().upc()).isEqualTo("string");
+            assertThat(item.track().external_urls().spotify()).isEqualTo("string");
+            assertThat(item.track().href()).isEqualTo("string");
+            assertThat(item.track().id()).isEqualTo("string");
+            assertThat(item.track().is_playable()).isEqualTo(false);
+            assertThat(item.track().linked_from().external_urls()).isNull();
+            assertThat(item.track().linked_from().href()).isNull();
+            assertThat(item.track().linked_from().id()).isNull();
+            assertThat(item.track().linked_from().type()).isNull();
+            assertThat(item.track().linked_from().uri()).isNull();
+            assertThat(item.track().restrictions().reason()).isEqualTo("string");
+            assertThat(item.track().name()).isEqualTo("string");
+            assertThat(item.track().popularity()).isEqualTo(0);
+            assertThat(item.track().preview_url()).isEqualTo("string");
+            assertThat(item.track().track_number()).isEqualTo(0);
+            assertThat(item.track().type()).isEqualTo("track");
+            assertThat(item.track().uri()).isEqualTo("string");
+            assertThat(item.track().is_local()).isEqualTo(false);
         }
     }
 

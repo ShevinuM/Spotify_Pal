@@ -15,7 +15,7 @@ public record Album (
     String type,
     String uri,
     Copyright[] copyrights,
-    ExternalIds external_ids,
+    ExternalId external_ids,
     String[] genres,
     String label,
     Integer popularity,

@@ -7,7 +7,7 @@ public record Track (
     Integer disc_number,
     Integer duration_ms,
     boolean explicit,
-    ExternalIds external_ids,
+    ExternalId external_ids,
     ExternalUrls external_urls,
     String href,
     String id,

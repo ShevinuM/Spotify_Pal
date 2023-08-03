@@ -1,6 +1,6 @@
 package com.shevinum.dao;
 
-public record ExternalIds (
+public record ExternalId(
     String isrc,
     String ean,
     String upc
