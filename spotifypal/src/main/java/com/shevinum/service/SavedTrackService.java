@@ -1,10 +1,12 @@
 package com.shevinum.service;
 
 import com.shevinum.dao.SavedTrackRepository;
+import com.shevinum.dao.SpotifyTracksResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
