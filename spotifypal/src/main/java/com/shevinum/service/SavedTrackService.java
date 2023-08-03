@@ -17,7 +17,11 @@ public class SavedTrackService {
     @Autowired
     private SavedTrackRepository savedTrackRepository;
 
-    public void updateSongs(OAuth2AuthorizedClient client) {
+    public SavedTrackService(SavedTrackRepository savedTrackRepository) {
+        this.savedTrackRepository = savedTrackRepository;
+    }
+
+    public SpotifyTracksResponse getSavedTacks(OAuth2AuthorizedClient client) throws RuntimeException{
         String accessToken = client.getAccessToken().getTokenValue();
         RestTemplate restTemplate = new RestTemplate();
         String endpoint = "https://api.spotify.com/v1/me/tracks";
@@ -25,5 +29,13 @@ public class SavedTrackService {
         headers.setBearerAuth(accessToken);
         HttpEntity<String> entity = new HttpEntity<>(headers);
         ResponseEntity<SpotifyTracksResponse> response = restTemplate.exchange(endpoint, HttpMethod.GET, entity, SpotifyTracksResponse.class);
+        if (response.hasBody()) {
+            SpotifyTracksResponse spotifyTracksResponse = response.getBody();
+            return spotifyTracksResponse;
+        } else {
+            throw new RuntimeException("No body in response");
+        }
+    }
+    public void updateSongs() {
     }
 }
