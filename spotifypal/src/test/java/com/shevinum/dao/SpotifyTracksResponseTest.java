@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * This class tests the deserialization of sample Spotify JSON responses into SpotifyTracksResponse objects.
  */
-public class MappingTest {
+public class SpotifyTracksResponseTest {
 
     @Test
     public void testMapping() throws IOException {

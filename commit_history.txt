@@ -1,0 +1,67 @@
+aa82ec5 - ShevinuM, 4 days ago : started creating integration tests to test for response from Spotify API
+
+5b0c625 - ShevinuM, 4 days ago : Wrote MappingTest
+
+102a48a - ShevinuM, 4 days ago : Completed writing the mapping classes for Savedtracks
+
+636544c - ShevinuM, 5 days ago : Update 03 - 08 - 2023
+
+- Continued working on SavedTrackService implementing upto receiving the response from the API
+
+843688d - ShevinuM, 7 days ago : Update 31-07-2023 11:07 PM IST
+
+- Created SavedTrackRepository
+- Created SavedPlaylistRespository
+- Started implementing SpotifyTrackService
+
+eacd10b - Shevinu Nawalage, 7 days ago : Update README.md
+218bb4b - ShevinuM, 8 days ago : Partially Implemented OAuth 2.0
+
+- The authorization page now comes and the user can authorize.
+- Haven't implemented dealing with access tokens yet
+
+4a6d3be - ShevinuM, 11 days ago : Update 28 - 07 - 2023
+
+- Started implementing OAuth
+
+1606d57 - ShevinuM, 11 days ago : Update 26-07-2022
+
+- Created the entity class for a saved playlist.
+-Completed configuring the database and the two tables to add records.
+
+a210dad - ShevinuM, 3 weeks ago : Added unit tests for SavedTrack.java
+
+93d0055 - ShevinuM, 3 weeks ago : Fixed the issue where database was not working.
+
+The environment variables had to be manually added through IntelliJ configurations.
+
+4e4bf66 - ShevinuM, 3 weeks ago : Merge branch 'main' of https://github.com/ShevinuM/SpotifyPal
+
+ff98eba - ShevinuM, 3 weeks ago : Update 16-07-2023
+
+Implemented
+- Entity class representing the saved track table
+- Docker container with the database to store the saved track.
+- docker-compose.yml
+- application.yml
+
+Issues
+- Database is not working as expected possibly due to the password and username not being read properly
+
+d83e03a - Shevinu Nawalage, 3 weeks ago : Update README.md
+116bf62 - Shevinu Nawalage, 3 weeks ago : Update README.md
+5186909 - ShevinuM, 3 weeks ago : Update UML Diagrams
+
+816f7c6 - Shevinu Nawalage, 3 weeks ago : Update README.md
+c74a353 - ShevinuM, 3 weeks ago : Update 15-07-2023
+
+- Initialized the application and added some boilerplate code.
+- Created basic methods for the RestController.
+
+e76bb05 - ShevinuM, 4 weeks ago : update
+
+7c3ada7 - ShevinuM, 4 weeks ago : update
+
+5b1252c - ShevinuM, 4 weeks ago : Update
+
+780bbd0 - ShevinuM, 4 weeks ago : Initial commit
