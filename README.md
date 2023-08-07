@@ -2,6 +2,11 @@
 
 Welcome to SpotifyPal - a custom application designed to enhance your Spotify experience with a suite of new functionalities.
 
+Here is a high level overview of what I have implemented so far
+
+![Architecture Diagram](UML/Architecture%20Diagram/Diagram.drawio.svg)
+
+
 ## Why SpotifyPal?
 
 While Spotify provides a wide array of features, there are specific tasks that it doesn't natively support through its API. SpotifyPal is designed to bridge this gap by allowing you to execute custom scripts and control your music experience more conveniently and effectively. 
