@@ -66,11 +66,11 @@ public class SavedTrackService {
      * @param trackIds List of track ids to get the audio features for
      * @return List of objects of type TrackAudioFeatures where each object represents the audio features for a single track
      */
-    public List<TrackAudioFeatures> getTrackAudioFeatures(OAuth2AuthorizedClient client, List<String> trackIds) {
+    public List<AudioFeatures> getTrackAudioFeatures(OAuth2AuthorizedClient client, List<String> trackIds) {
         String accessToken = client.getAccessToken().getTokenValue();
         RestTemplate restTemplate = new RestTemplate();
 
-        List<TrackAudioFeatures> allTracks = new ArrayList<>();
+        List<AudioFeatures> allTracks = new ArrayList<>();
 
         String baseEndpoint = "https://api.spotify.com/v1/audio-features";
 
@@ -91,10 +91,11 @@ public class SavedTrackService {
             HttpHeaders headers = new HttpHeaders();
             headers.setBearerAuth(accessToken);
             HttpEntity<String> entity = new HttpEntity<>(headers);
-            ResponseEntity<TrackAudioFeatures[]> response = restTemplate.exchange(requestEndpoint, HttpMethod.GET, entity, TrackAudioFeatures[].class);
+            ResponseEntity<TracksAudioFeatures> response = restTemplate.exchange(requestEndpoint, HttpMethod.GET, entity, TracksAudioFeatures.class);
             if (response.hasBody()) {
-                TrackAudioFeatures[] trackAudioFeatures = response.getBody();
-                allTracks.addAll(Arrays.asList(trackAudioFeatures));
+                TracksAudioFeatures tracksAudioFeatures = response.getBody();
+                AudioFeatures[] items = tracksAudioFeatures.audio_features();
+                allTracks.addAll(Arrays.asList(items));
                 startIndex += batchSize;
             } else {
                 throw new RuntimeException("No body in response");
@@ -117,7 +118,8 @@ public class SavedTrackService {
             savedTrack.setArtist_name(track.artists()[0].name()); // only adding the main artist
             savedTrack.setAdded_at(trackResponse.added_at());
         }
-        List<TrackAudioFeatures> trackAudioFeatures = getTrackAudioFeatures(client, trackIds);
+        List<AudioFeatures> trackAudioFeatures = getTrackAudioFeatures(client, trackIds);
+
 
     }
 }

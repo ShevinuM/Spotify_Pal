@@ -1,30 +1,53 @@
-aa82ec5 - ShevinuM, 4 days ago : started creating integration tests to test for response from Spotify API
+87b2b16 - ShevinuM, 20 hours ago : Update Diagram
 
-5b0c625 - ShevinuM, 4 days ago : Wrote MappingTest
+90e763c - ShevinuM, 20 hours ago : Merge branch 'main' of https://github.com/ShevinuM/SpotifyPal
 
-102a48a - ShevinuM, 4 days ago : Completed writing the mapping classes for Savedtracks
+146eae2 - ShevinuM, 20 hours ago : Update Diagrams
 
-636544c - ShevinuM, 5 days ago : Update 03 - 08 - 2023
+c668f73 - Shevinu Nawalage, 20 hours ago : Update README.md
+3586aa7 - ShevinuM, 20 hours ago : Merge branch 'main' of https://github.com/ShevinuM/SpotifyPal
+
+602a3da - ShevinuM, 20 hours ago : Updated the diagram
+
+379b608 - Shevinu Nawalage, 20 hours ago : Update README.md
+2befaff - ShevinuM, 20 hours ago : Update 08 - 08 - 2023
+
+- Implemented most of the functionality in SpotifyTrackService
+- Wrote the mapping class TrackAudioFeatures to map from JSON response to a Java Object.
+
+To Do:
+- Do Exception Handling For Spotify Track Service
+- Continue working on updateSongs
+-Write the tests for the SpotifyTrackService
+- Write the tests for mapping class TrackAudioFeatures
+
+aa82ec5 - ShevinuM, 5 days ago : started creating integration tests to test for response from Spotify API
+
+5b0c625 - ShevinuM, 5 days ago : Wrote MappingTest
+
+102a48a - ShevinuM, 5 days ago : Completed writing the mapping classes for Savedtracks
+
+636544c - ShevinuM, 6 days ago : Update 03 - 08 - 2023
 
 - Continued working on SavedTrackService implementing upto receiving the response from the API
 
-843688d - ShevinuM, 7 days ago : Update 31-07-2023 11:07 PM IST
+843688d - ShevinuM, 8 days ago : Update 31-07-2023 11:07 PM IST
 
 - Created SavedTrackRepository
 - Created SavedPlaylistRespository
 - Started implementing SpotifyTrackService
 
-eacd10b - Shevinu Nawalage, 7 days ago : Update README.md
-218bb4b - ShevinuM, 8 days ago : Partially Implemented OAuth 2.0
+eacd10b - Shevinu Nawalage, 8 days ago : Update README.md
+218bb4b - ShevinuM, 9 days ago : Partially Implemented OAuth 2.0
 
 - The authorization page now comes and the user can authorize.
 - Haven't implemented dealing with access tokens yet
 
-4a6d3be - ShevinuM, 11 days ago : Update 28 - 07 - 2023
+4a6d3be - ShevinuM, 12 days ago : Update 28 - 07 - 2023
 
 - Started implementing OAuth
 
-1606d57 - ShevinuM, 11 days ago : Update 26-07-2022
+1606d57 - ShevinuM, 12 days ago : Update 26-07-2022
 
 - Created the entity class for a saved playlist.
 -Completed configuring the database and the two tables to add records.
@@ -53,7 +76,7 @@ d83e03a - Shevinu Nawalage, 3 weeks ago : Update README.md
 5186909 - ShevinuM, 3 weeks ago : Update UML Diagrams
 
 816f7c6 - Shevinu Nawalage, 3 weeks ago : Update README.md
-c74a353 - ShevinuM, 3 weeks ago : Update 15-07-2023
+c74a353 - ShevinuM, 4 weeks ago : Update 15-07-2023
 
 - Initialized the application and added some boilerplate code.
 - Created basic methods for the RestController.
