@@ -15,12 +15,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+import org.springframework.security.oauth2.core.OAuth2AccessToken;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,19 +33,20 @@ class SavedTrackServiceTest {
     private RestTemplate restTemplate;
     @Mock
     private OAuth2AuthorizedClient client;
+    @Mock
+    private OAuth2AccessToken token;
     @InjectMocks
     private SavedTrackService savedTrackService;
 
-    private ResponseEntity<SpotifyTracksResponse> mockedResponseEntity;
     private String testData1;
 
     @BeforeEach
     void setUp() {
-        String testData1 = """
+        testData1 = """
                 {
                   "href": "https://api.spotify.com/v1/me/shows?offset=0&limit=20",
                   "limit": 20,
-                  "next": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
+                  "next": null,
                   "offset": 0,
                   "previous": "https://api.spotify.com/v1/me/shows?offset=1&limit=1",
                   "total": 4,
@@ -172,7 +174,8 @@ class SavedTrackServiceTest {
                   ]
                 }
                 """;
-        when(client.getAccessToken().getTokenValue()).thenReturn("test");
+        when(client.getAccessToken()).thenReturn(token);
+        when(token.getTokenValue()).thenReturn("test");
     }
 
     @AfterEach
@@ -181,19 +184,21 @@ class SavedTrackServiceTest {
 
     @Test
     void getSavedTracksTest1() {
-        // when
-        ObjectMapper objectMapper = new ObjectMapper();
-        SpotifyTracksResponse response;
         try {
+            // when
+            ObjectMapper objectMapper = new ObjectMapper();
+            SpotifyTracksResponse response;
             response = objectMapper.readValue(testData1, SpotifyTracksResponse.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        response = objectMapper.readValue(testData1, SpotifyTracksResponse.class);
-        when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(), eq(SpotifyTracksResponse.class))).thenReturn(new ResponseEntity<>(response, HttpStatus.OK));
+            when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(), eq(SpotifyTracksResponse.class))).thenReturn(new ResponseEntity<>(response, HttpStatus.OK));
 
-        // then
-        assertThat(savedTrackService.getSavedTracks(client)).hasOnlyElementsOfType(SavedTracksResponse.class);
+            // then
+            System.out.println(response.toString());
+            assertThat(savedTrackService.getSavedTracks(client)).hasOnlyElementsOfType(SavedTracksResponse.class);
+
+        } catch (Exception e) {
+            fail("Test failed due to exception: " + e.getMessage());
+        }
+
     }
 
     @Test

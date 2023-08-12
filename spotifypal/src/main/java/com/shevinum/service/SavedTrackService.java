@@ -18,11 +18,13 @@ import java.util.List;
 @Service
 public class SavedTrackService {
 
-    @Autowired
     private SavedTrackRepository savedTrackRepository;
+    private RestTemplate restTemplate;
 
-    public SavedTrackService(SavedTrackRepository savedTrackRepository) {
+    @Autowired
+    public SavedTrackService(SavedTrackRepository savedTrackRepository, RestTemplate restTemplate) {
         this.savedTrackRepository = savedTrackRepository;
+        this.restTemplate = restTemplate;
     }
 
     /**
@@ -36,7 +38,6 @@ public class SavedTrackService {
      */
     public List<SavedTracksResponse> getSavedTracks(OAuth2AuthorizedClient client) throws RuntimeException{
         String accessToken = client.getAccessToken().getTokenValue();
-        RestTemplate restTemplate = new RestTemplate();
 
         List<SavedTracksResponse> allTracks = new ArrayList<>();
 
@@ -68,7 +69,6 @@ public class SavedTrackService {
      */
     public List<AudioFeatures> getTrackAudioFeatures(OAuth2AuthorizedClient client, List<String> trackIds) {
         String accessToken = client.getAccessToken().getTokenValue();
-        RestTemplate restTemplate = new RestTemplate();
 
         List<AudioFeatures> allTracks = new ArrayList<>();
 
