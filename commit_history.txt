@@ -1,3 +1,13 @@
+a7af2d9 - ShevinuM, 2023-08-12 16:22:41 +0530 : Update 12 Aug 2023
+
+Implemented
+- Get SavedTracksTest1 is almost complete.
+- The service class is creating a list of SpotifyTracksResponses as expected.
+
+ToDo
+- Complete test 1 for more test cases such as when the next is not null so check if it adds all of the items from both pages to it.
+- Complete the test cases for the service class for the rest of the methods.
+
 ff85084 - ShevinuM, 2023-08-12 01:10:51 +0530 : Update 12 Aug 2023
 
 - Working on the test class for SpotifyTracksService
