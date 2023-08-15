@@ -63,9 +63,9 @@ public class SavedTrack {
     @Column(
             name = "danceability",
             nullable = false,
-            columnDefinition = "FLOAT"
+            columnDefinition = "DOUBLE"
     )
-    private Float danceability;
+    private Double danceability;
     @Column(
             name = "duration",
             nullable = false,
@@ -75,9 +75,9 @@ public class SavedTrack {
     @Column(
             name = "energy",
             nullable = false,
-            columnDefinition = "FLOAT"
+            columnDefinition = "DOUBLE"
     )
-    private Float energy;
+    private Double energy;
     @Column(
             name = "key",
             nullable = false,
@@ -93,17 +93,17 @@ public class SavedTrack {
     @Column(
             name = "tempo",
             nullable = false,
-            columnDefinition = "FLOAT"
+            columnDefinition = "DOUBLE"
     )
-    private Float tempo;
+    private Double tempo;
     @Column(
             name = "valence",
             nullable = false,
-            columnDefinition = "FLOAT"
+            columnDefinition = "DOUBLE"
     )
-    private Float valence;
+    private Double valence;
 
-    public SavedTrack(Long table_id, String name, String uri, String artist_name, String artist_uri, String added_at, String id, Float danceability, Integer duration, Float energy, Integer key, Integer mode, Float tempo, Float valence) {
+    public SavedTrack(Long table_id, String name, String uri, String artist_name, String artist_uri, String added_at, String id, Double danceability, Integer duration, Double energy, Integer key, Integer mode, Double tempo, Double valence) {
         this.table_id = table_id;
         this.name = name;
         this.uri = uri;
@@ -148,7 +148,7 @@ public class SavedTrack {
         return id;
     }
 
-    public Float getDanceability() {
+    public Double getDanceability() {
         return danceability;
     }
 
@@ -156,7 +156,7 @@ public class SavedTrack {
         return duration;
     }
 
-    public Float getEnergy() {
+    public Double getEnergy() {
         return energy;
     }
 
@@ -168,11 +168,11 @@ public class SavedTrack {
         return mode;
     }
 
-    public Float getTempo() {
+    public Double getTempo() {
         return tempo;
     }
 
-    public Float getValence() {
+    public Double getValence() {
         return valence;
     }
 
@@ -202,7 +202,7 @@ public class SavedTrack {
         this.id = id;
     }
 
-    public void setDanceability(Float danceability) {
+    public void setDanceability(Double danceability) {
         this.danceability = danceability;
     }
 
@@ -210,7 +210,7 @@ public class SavedTrack {
         this.duration = duration;
     }
 
-    public void setEnergy(Float energy) {
+    public void setEnergy(Double energy) {
         this.energy = energy;
     }
 
@@ -222,11 +222,11 @@ public class SavedTrack {
         this.mode = mode;
     }
 
-    public void setTempo(Float tempo) {
+    public void setTempo(Double tempo) {
         this.tempo = tempo;
     }
 
-    public void setValence(Float valence) {
+    public void setValence(Double valence) {
         this.valence = valence;
     }
 

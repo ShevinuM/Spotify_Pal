@@ -112,8 +112,33 @@ public class SavedTrackService {
     public void updateSongs(OAuth2AuthorizedClient client) {
         List<SavedTracksResponse> trackResponses = getSavedTracks(client);
         List<String> trackIds = new ArrayList<>(); // to store the track ids to later on get the track features
-        for (SavedTracksResponse trackResponse : trackResponses) {
+        for (SavedTracksResponse tracksResponse : trackResponses) { // adds the ids to the list in order
+            trackIds.add(tracksResponse.track().id());
+        }
+        if (trackResponses.size() != trackIds.size()) {
+            throw new IllegalStateException("""
+                    There are different number of track ids and track responses.
+                    Check that the track Id's of all track responses are obtained.
+                    """);
+        }
+        List<AudioFeatures> trackAudioFeatures = getTrackAudioFeatures(client, trackIds);
+        if (trackAudioFeatures.size() != trackIds.size()) {
+            throw new IllegalStateException("""
+                    There are different number of track ids and track audio feature.
+                    Check that all the trackIds are being used to get audio features""");
+        }
+        // now the trackAudioFeatures are in the same order as trackIds
+        for (int index=0; index < trackResponses.size(); index++) {
+            SavedTracksResponse trackResponse = trackResponses.get(index);
+            AudioFeatures eachTrackAudioFeatures = trackAudioFeatures.get(index);
             Track track = trackResponse.track();
+            if (!eachTrackAudioFeatures.id().equals(track.id())) {
+                throw new IllegalArgumentException("""
+                        Tracks Responses list and trackAudioFeatures list are not in correct order. If they are in 
+                        correct order for the same index the AudioFeatures object should represent it's corresponding
+                        Track
+                        """);
+            }
             SavedTrack savedTrack = new SavedTrack(); // creating a new saved track entity object to save to DB
             savedTrack.setName(track.name());
             savedTrack.setUri(track.uri());
@@ -122,8 +147,15 @@ public class SavedTrackService {
             savedTrack.setArtist_uri(track.artists()[0].uri()); // only adding the main artist
             savedTrack.setArtist_name(track.artists()[0].name()); // only adding the main artist
             savedTrack.setAdded_at(trackResponse.added_at());
+            savedTrack.setValence(eachTrackAudioFeatures.valence());
+            savedTrack.setTempo(eachTrackAudioFeatures.tempo());
+            savedTrack.setMode(eachTrackAudioFeatures.mode());
+            savedTrack.setKey(eachTrackAudioFeatures.key());
+            savedTrack.setEnergy(eachTrackAudioFeatures.energy());
+            savedTrack.setDuration(eachTrackAudioFeatures.duration_ms());
+            savedTrack.setDanceability(eachTrackAudioFeatures.danceability());
+            
         }
-        List<AudioFeatures> trackAudioFeatures = getTrackAudioFeatures(client, trackIds);
 
 
 
