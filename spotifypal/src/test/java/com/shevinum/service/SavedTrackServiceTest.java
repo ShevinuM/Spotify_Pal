@@ -367,7 +367,10 @@ class SavedTrackServiceTest {
     }
 
 
-
+    /**
+     * This test class checks that when a JSON is returned from the Spotify API, the method returns a list of
+     * AudioFeatures objects.
+     */
     @Test
     void getTrackAudioFeaturesTest() {
         StringBuilder tracksAudioFeatures = new StringBuilder();
@@ -401,7 +404,9 @@ class SavedTrackServiceTest {
                       "valence": 0.428
                     }
                     """, i));
-            tracksAudioFeatures.append(",");
+            if (i < 10099) { // Only add a comma if it's not the last object
+                tracksAudioFeatures.append(",");
+            }
         }
         tracksAudioFeatures.append("""
                   ]
@@ -419,7 +424,9 @@ class SavedTrackServiceTest {
         }
     }
 
+
     @Test
     void updateSongsTest() {
+
     }
 }

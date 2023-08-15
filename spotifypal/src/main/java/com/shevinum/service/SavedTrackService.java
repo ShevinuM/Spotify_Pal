@@ -104,12 +104,17 @@ public class SavedTrackService {
         return allTracks;
     }
 
+    /**
+     * This method takes in the OAuth2AuthorizedClient, and uses it to make a request to the Spotify API to get the all
+     * the saved tracks of the user. 
+     * @param client
+     */
     public void updateSongs(OAuth2AuthorizedClient client) {
         List<SavedTracksResponse> trackResponses = getSavedTracks(client);
         List<String> trackIds = new ArrayList<>(); // to store the track ids to later on get the track features
         for (SavedTracksResponse trackResponse : trackResponses) {
             Track track = trackResponse.track();
-            SavedTrack savedTrack = new SavedTrack(); // creating a new saved track object
+            SavedTrack savedTrack = new SavedTrack(); // creating a new saved track entity object to save to DB
             savedTrack.setName(track.name());
             savedTrack.setUri(track.uri());
             savedTrack.setId(track.id());
@@ -119,6 +124,7 @@ public class SavedTrackService {
             savedTrack.setAdded_at(trackResponse.added_at());
         }
         List<AudioFeatures> trackAudioFeatures = getTrackAudioFeatures(client, trackIds);
+
 
 
     }
