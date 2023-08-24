@@ -108,8 +108,9 @@ public class SavedTrackService {
      * This method takes in the OAuth2AuthorizedClient, and uses it to make a request to the Spotify API to get the all
      * the saved tracks of the user. 
      * @param client
+     * @throws IllegalStateException, IllegalArgumentException
      */
-    public void updateSongs(OAuth2AuthorizedClient client) {
+    public void updateSongs(OAuth2AuthorizedClient client) throws IllegalStateException, IllegalArgumentException{
         List<SavedTracksResponse> trackResponses = getSavedTracks(client);
         List<String> trackIds = new ArrayList<>(); // to store the track ids to later on get the track features
         for (SavedTracksResponse tracksResponse : trackResponses) { // adds the ids to the list in order
@@ -154,7 +155,7 @@ public class SavedTrackService {
             savedTrack.setEnergy(eachTrackAudioFeatures.energy());
             savedTrack.setDuration(eachTrackAudioFeatures.duration_ms());
             savedTrack.setDanceability(eachTrackAudioFeatures.danceability());
-            
+            savedTrackRepository.save(savedTrack);
         }
 
 

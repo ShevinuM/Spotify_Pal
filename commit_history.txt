@@ -1,3 +1,12 @@
+7a4b36f - ShevinuM, 2023-08-15 22:48:30 +0530 : Update 15 Aug 2023
+
+Implemented
+- Completed tests and validation for all methods in savedTracks service class other than update songs.
+- Partially implemented update songs method.
+
+To-do
+- Complete update songs method
+
 23d2723 - ShevinuM, 2023-08-15 22:03:38 +0530 : Fixed the issue with the test not running as expected.
 
 
