@@ -1,3 +1,12 @@
+bdc77c1 - ShevinuM, 2023-08-24 23:53:29 +0530 : Update 24-08-2023
+
+Implemented
+- UpdateSongs is hopefully completed but untested.
+- This means savedTrack service is completed and we can now save tracks to the database.
+
+To-Do
+- Test update songs and check that the songs are getting saved properly.
+
 7a4b36f - ShevinuM, 2023-08-15 22:48:30 +0530 : Update 15 Aug 2023
 
 Implemented
