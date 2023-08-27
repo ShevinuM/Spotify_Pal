@@ -58,7 +58,7 @@ SpotifyPal is a feature-rich application designed to enhance your music listenin
 - Utilizes advanced Audio Analysis features such as tempo, key, and mode (Camelot wheel) provided by Spotify Web API to algorithmically sort playlists for optimal song-to-song transitions. 
 
 ### Filtered Playlists ⚙️
-- Employs machine learning techniques to intelligently curate playlists based on your 'liked' songs, allowing for a more personalized listening experience.
+- Intelligently curate and filtre playlists based on your 'liked' songs, allowing for a more personalized listening experience with only songs you known and love.
 
 ### Automated Monthly and Yearly Playlists 🗓️
 - Leverages automation to compile monthly and yearly playlists of all songs saved/liked throughout respective time frames. Say goodbye to manual curation!
