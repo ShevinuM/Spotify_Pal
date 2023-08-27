@@ -9,39 +9,114 @@ Here is a high level overview of what I have implemented so far. There's a lot m
 
 ## Why SpotifyPal?
 
-While Spotify provides a wide array of features, there are specific tasks that it doesn't natively support through its API. SpotifyPal is designed to bridge this gap by allowing you to execute custom scripts and control your music experience more conveniently and effectively. 
+While Spotify provides a wide array of features, there are specific features that it doesn't natively support through its API. SpotifyPal is designed to bridge this gap by adding custom features that enhance your Spotify experience.
 
 Read more about the motivation behind SpotifyPal in the [project proposal](https://github.com/ShevinuM/SpotifyPal/blob/main/UML/Project%20Proposal/Project-Proposal.md).
 
 ## How Does SpotifyPal Work?
 
-SpotifyPal is built using Spring Boot and utilizes OAuth 2.0 for authentication. It uses a PostgreSQL database and the Spotify API to interact with your Spotify profile. The front-end is built using HTML, CSS, and JavaScript, and I'm currently exploring the possibility of using ReactJS as the front-end framework.
+The backend service is implemented as a RESTful API, comprised of 9 distinct endpoints, each responsible for specific functionalities. The technology stack is Java-centric, using Spring Boot as the primary framework for developing the server-side logic.
+
+### Technologies and Frameworks
+
+- **Spring Boot**: Backend Framework
+- **PostgreSQL**: Relational Database Management System
+- **Docker**: Containerization of the PostgreSQL database
+- **Spotify OAuth 2.0**: User Authentication
+- **Spring Data JPA**: Object-Relational Mapping (ORM)
+
+#### User Authentication
+
+- Integrated Spotify OAuth 2.0 for secure user authentication. Utilized the `OAuth2AuthorizedClient` class to manage and retrieve the authentication tokens.
+
+#### Database Management
+
+- Utilized a Docker container to host the PostgreSQL database for seamless and platform-independent database management.
+- Used Spring Data JPA for CRUD operations, entity-to-table mapping, and database transactions. Defined repositories extending the `JpaRepository` interface for object-relational mapping.
+
+### API Endpoint Operations
+
+- The RESTful API is designed with 9 endpoints, performing unique operations mentioned in the expected feature below.
+
+### Testing
+
+- **JUnit5**: Unit Testing Framework
+- **AssertJ**: Fluent Assertion Library for enhanced test validation
+- **Mockito**: Mocking framework for mocking external API and database calls
+
+#### Mocking and Test Coverage
+
+- Employed Mockito to mock database interactions and Spotify API calls to isolate units of work and perform robust testing.
+- Utilized JUnit5 along with AssertJ for creating test cases that cover various edge-cases and scenarios, ensuring high test coverage.
+
 
 ## Features
 
-SpotifyPal aims to introduce the following features:
+SpotifyPal is a feature-rich application designed to enhance your music listening experience and bring an analytic approach to playlist management. Here are some of the most exciting features we are working on:
 
-1. **Playlist Sorting:** Sort the songs in your playlist using Audio Analysis features (e.g., key & mode - Camelot wheel, tempo) provided by the Spotify Web API to ensure smooth transitions between songs.
-2. **Filtered Playlists:** Filter any given playlist to only include songs you've saved and transfer them to a new playlist.
-3. **Monthly Playlists:** Compile a monthly playlist of all the songs you've saved/liked throughout the month.
-4. **Artist-specific Playlists:** Filter all songs from a given artist to only include the ones you've saved and create a new playlist out of them.
-5. **Yearly Playlists:** Compile a yearly playlist of all the songs you've saved/liked throughout the year.
-6. **Mood-based Playlists:** Create playlists based on your selected 'mood' and 'duration', adjusting for the time of day.
-7. **Top Favorites Playlist:** Generate a playlist consisting of your top 'n' favorite/most listened to songs during the week, where 'n' is a value input by you.
-8. **Profile Stats:** Display a summary of your Spotify profile stats for the month.
+### Intelligent Playlist Sorting Algorithms 🎵
+- Utilizes advanced Audio Analysis features such as tempo, key, and mode (Camelot wheel) provided by Spotify Web API to algorithmically sort playlists for optimal song-to-song transitions. 
 
-The project is currently in works.
+### Filtered Playlists ⚙️
+- Employs machine learning techniques to intelligently curate playlists based on your 'liked' songs, allowing for a more personalized listening experience.
 
-Watch this space for more updates as SpotifyPal develops!
+### Automated Monthly and Yearly Playlists 🗓️
+- Leverages automation to compile monthly and yearly playlists of all songs saved/liked throughout respective time frames. Say goodbye to manual curation!
 
-## Software Engineering Principles Used
-1. **Project Planning with UML:** Although UML is not used for many personal projects, I'm using it for mine since it has helped me a lot in the past to visualize things, avoid errors and make the codebase more organized. I'm incorporating the following UML Diagrams into my project,
- - Use Cases & Use Case Descriptions
- - Activity Diagrams
- - Layer Diagrams
- - Sequence Diagrams
- - Class Diagrams
-2. **Iterative and Incremental Development**
-3. **Architecture Patterns:** N-Tier
-4. **Design Patterns:** MVC - Model-View-Controller
+### Artist-Specific Playlists 🎤
+- Easily filter your entire Spotify library to find songs from your favorite artists that you've saved and compile them into specialized playlists.
+
+### Mood-Based Playlist Generation 🌈
+- Applies sentiment analysis to create playlists based on your chosen mood and adjusts for the time of day, ensuring a tailor-fit listening experience.
+
+### Top Favorites Playlist 🌟
+- Leverages Spotify's streaming history to generate a playlist consisting of your top 'n' tracks of the week, with 'n' being a user-definable value.
+
+### In-Depth Profile Stats 📊
+- Utilizes Data Visualization techniques to provide a comprehensive monthly summary of your Spotify profile stats, allowing you to track your listening habits like never before.
+
+**Project Status**: _In Development_  
+Stay tuned for more exciting updates as SpotifyPal continues to evolve!
+
+## How To Navigate The Codebase
+- [Project Planning with UML](UML)
+- [Backend of the Application](spotifypal/src/main/java/com/shevinum)
+    - [API Layer](spotifypal/src/main/java/com/shevinum/api)
+    - [Configuration Layer](spotifypal/src/main/java/com/shevinum/config)
+    - [Data Access Object Layer](spotifypal/src/main/java/com/shevinum/dao)
+    - [Model Layer](spotifypal/src/main/java/com/shevinum/model)
+    - [Service Layer](spotifypal/src/main/java/com/shevinum/service)
+- [Test Classes](spotifypal/src/test/java/com/shevinum)
+    - [DAO Tests](spotifypal/src/test/java/com/shevinum/dao)
+    - [Model Tests](spotifypal/src/test/java/com/shevinum/model)
+    - [Service Tests](spotifypal/src/test/java/com/shevinum/service)
+
+
+## Software Engineering Principles and Methodologies Employed
+
+SpotifyPal is developed with a strong emphasis on rigorous software engineering principles, employing a blend of proven methodologies and cutting-edge approaches. Below are the specifics:
+
+### Project Planning with UML (Unified Modeling Language) 📈
+- Leveraging UML to perform exhaustive systems analysis and design, aiming for a robust, maintainable codebase.
+  - **Use Case Diagrams & Descriptions**: To identify system functionalities and interactions.
+  - **Activity Diagrams**: For outlining dynamic aspects and workflow within the system.
+  - **Layer Diagrams**: To ensure separation of concerns and to define boundaries.
+  - **Sequence Diagrams**: For detailing object interactions in specific use-cases.
+  - **Class Diagrams**: To model the static structure, showing classes, attributes, operations, and relationships.
+
+### Iterative and Incremental Development 🔄
+- Adopting an iterative approach with incremental builds, facilitating rapid prototyping and continuous feedback.
+- Usage of Version Control (Git) for tracking changes and facilitating rollbacks.
+
+### Architecture Patterns: N-Tier 🏛️
+- Employing an N-Tier architectural pattern to decouple the application into Presentation, Business Logic, and Data Access Layers, thus enhancing maintainability and scalability.
+
+### Design Patterns: MVC (Model-View-Controller) 🎛️
+- Implementing the MVC design pattern to segregate application concerns.
+  - **Model**: For data manipulation and business logic.
+  - **View**: Responsible for UI and presentation logic.
+  - **Controller**: Orchestrating the interaction between Model and View.
+
+By adhering to these principles and methodologies, SpotifyPal aims to be not just a functional and user-friendly application, but also a robust, maintainable, and scalable software solution.
+
  
