@@ -7,11 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EntityScan("com.shevinum.model")
-@ComponentScan({"com.shevinum", "com.shevinum.service"})
+@ComponentScan({"com.shevinum", "com.shevinum.service", "com.shevinum.dao"})
 public class Main {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Main.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
+    }
 
 }
