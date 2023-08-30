@@ -3,14 +3,13 @@ package com.shevinum.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shevinum.dao.*;
 import com.shevinum.model.SavedTrack;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Spy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,29 +20,25 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
-@SpringBootTest
-public class updateSongsTest {
+@ExtendWith(MockitoExtension.class)
+class updateSongsTest {
 
-    // TODO: Write the integration test to test that the songs are correctly saved to a database
-
-    @Autowired
-    private SavedTrackRepository savedTrackRepository;
     private String spotifyTracksResponse;
     private String tracksAudioFeaturesResponse;
     private List<SavedTracksResponse> savedTracks;
     private List<AudioFeatures> audioFeatures;
+    @Mock
+    private SavedTrackRepository savedTrackRepository;
     @Mock
     private OAuth2AuthorizedClient client;
     @Mock
     private RestTemplate restTemplate;
     @Mock
     private OAuth2AccessToken token;
-    @Spy
     @InjectMocks
     private SavedTrackService savedTrackService;
 
@@ -216,6 +211,7 @@ public class updateSongsTest {
                     SpotifyTracksResponse.class);
             when(restTemplate.exchange(eq(endpoint1), eq(HttpMethod.GET), any(), eq(SpotifyTracksResponse.class)))
                     .thenReturn(new ResponseEntity<>(mappedSpotifyTracksResponse, HttpStatus.OK));
+            when(savedTrackService.getSavedTracks(client)).thenReturn(savedTracks);
             savedTracks = savedTrackService.getSavedTracks(client);
             ArrayList<String> tracksIds = new ArrayList<>();
             tracksIds.add("2up3OPMp9Tb4dAKM2erWXQ");
@@ -223,25 +219,18 @@ public class updateSongsTest {
                     objectMapper.readValue(tracksAudioFeaturesResponse, TracksAudioFeatures.class);
             when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(), eq(TracksAudioFeatures.class)))
                     .thenReturn(new ResponseEntity<>(mappedTracksAudioFeaturesResponse, HttpStatus.OK));
+            when(savedTrackService.getTrackAudioFeatures(client, tracksIds)).thenReturn(audioFeatures);
             audioFeatures = savedTrackService.getTrackAudioFeatures(client, tracksIds);
-            when(savedTrackService.getSavedTracks(any())).thenReturn(savedTracks);
-            when(savedTrackService.getTrackAudioFeatures(any(), tracksIds)).thenReturn(audioFeatures);
         } catch (Exception e) {
             fail("Test failed due to exception: " + e.getMessage());
         }
     }
 
-    @AfterEach
-    void tearDown() {
-        savedTrackRepository.deleteAll();
-    }
-
     @Test
-    void updateSongsTest() {
+    void test1() {
         savedTrackService.updateSongs(client);
-        List<SavedTrack> tracks = savedTrackRepository.findAll();
-        assertThat(tracks).hasOnlyElementsOfType(SavedTrack.class);
-
+        ArgumentCaptor<SavedTrack> argumentCaptor = ArgumentCaptor.forClass(SavedTrack.class);
+        verify(savedTrackRepository, atLeastOnce()).save(argumentCaptor.capture());
     }
 
 }

@@ -106,12 +106,12 @@ public class SavedTrackService {
 
     /**
      * This method takes in the OAuth2AuthorizedClient, and uses it to make a request to the Spotify API to get the all
-     * the saved tracks of the user. 
-     * @param client
+     * the saved tracks of the user.
      * @throws IllegalStateException, IllegalArgumentException
      */
-    public void updateSongs(OAuth2AuthorizedClient client) throws IllegalStateException, IllegalArgumentException{
-        List<SavedTracksResponse> trackResponses = getSavedTracks(client);
+    public void updateSongs(List<SavedTracksResponse> trackResponses,
+                            List<AudioFeatures> trackAudioFeatures) throws IllegalStateException,
+            IllegalArgumentException{
         List<String> trackIds = new ArrayList<>(); // to store the track ids to later on get the track features
         for (SavedTracksResponse tracksResponse : trackResponses) { // adds the ids to the list in order
             trackIds.add(tracksResponse.track().id());
@@ -122,7 +122,6 @@ public class SavedTrackService {
                     Check that the track Id's of all track responses are obtained.
                     """);
         }
-        List<AudioFeatures> trackAudioFeatures = getTrackAudioFeatures(client, trackIds);
         if (trackAudioFeatures.size() != trackIds.size()) {
             throw new IllegalStateException("""
                     There are different number of track ids and track audio feature.
@@ -156,6 +155,12 @@ public class SavedTrackService {
             savedTrack.setDuration(eachTrackAudioFeatures.duration_ms());
             savedTrack.setDanceability(eachTrackAudioFeatures.danceability());
             savedTrackRepository.save(savedTrack);
+        }
+
+        public void runSavedTrackService(OAuth2AuthorizedClient client) {
+            List<SavedTracksResponse> trackResponses = getSavedTracks(client);
+            List<AudioFeatures> trackAudioFeatures = getTrackAudioFeatures(client, trackIds);
+
         }
     }
 }
