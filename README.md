@@ -1,3 +1,9 @@
+This project is currently being migrated to using JavaScript, ReactJS, NodeJS, ExpressJS, MongoDB. The below are the links to the ongoing development of client and server.
+[Client](https://github.com/ShevinuM/SpotifyPal-Client),
+[Server](https://github.com/ShevinuM/SpotifyPal-Server)
+
+-----------------------------------------------------------------------
+
 # SpotifyPal
 
 Welcome to SpotifyPal - a custom application designed to enhance your Spotify experience with a suite of new functionalities.
